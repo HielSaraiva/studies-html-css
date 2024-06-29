@@ -1,4 +1,5 @@
-## Studies about Front-end technologies englobing:
+## Studies Front-end:
+### Topics:
 * HTML
 
 * CSS
