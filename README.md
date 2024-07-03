@@ -1,5 +1,7 @@
-## Studies Front-end:
-### Topics:
+# Front-end Studies
+
+## Topics
+
 * HTML
 
 * CSS
