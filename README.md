@@ -1,11 +1,6 @@
-# Front-end Studies
+# Javascript e TypeScript - Full Stack Studies
 
 ## Topics
 
-* HTML
+* HTML e CSS
 
-* CSS
-
-* JavaScript
-
-* React JS
