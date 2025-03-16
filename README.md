@@ -1,6 +1,5 @@
-# Javascript e TypeScript - Full Stack Studies
+# HTML & CSS Studies
 
 ## Topics
 
 * HTML e CSS
-
