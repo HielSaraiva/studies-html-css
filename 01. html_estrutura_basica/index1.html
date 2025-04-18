@@ -15,10 +15,12 @@
          background: rgb(255, 255, 255);
       }
 
-      #heading-1 {
+      /* O id deve ser único na página */
+      #heading-1 { 
          background: purple;
       }
 
+      /* A classe pode ser repetida e usada em conjunto com outras classes */
       .red-background {
          background: red;
       }
@@ -26,6 +28,8 @@
       .bold {
          color: pink;
       }
+
+      /* O id tem maior especificidade do que a classe */
    </style>
 </head>
 
@@ -34,13 +38,37 @@
    <p>Lorem ipsum dolor sit amet.</p>
    <h2 id="heading-2" class="red-background">Test2</h2>
    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ratione id quod enim <a href="www.google.com"
-         target="_blank"><strong>WARNING!!!</strong></a> quas est, <i>test</i> sed dolore minima <em>crazy</em> cum
+         target="_blank"><strong class="bold">WARNING!!!</strong></a> quas est, <i>test</i> sed dolore minima <em>crazy</em> cum
       dolorum blanditiis expedita sunt? Quisquam molestiae omnis sunt nulla! Maiores.</p>
-   <h3 id="heading-2" class="red-background">Test2</h3>
+   <h3 id="heading-3" class="red-background">Test3</h3>
    <p>Lorem ipsum <del>Lorem ipsum dolor sit amet</del> <ins>vai doido</ins></p>
-   <h4 id="heading-2" class="red-background">Test2</h4>
-   <h5 id="heading-2" class="red-background">Test2</h5>
-   <h6 id="heading-2" class="red-background">Test2</h6>
+   <h4 id="heading-4" class="red-background">Test4</h4>
+   <h5 id="heading-5" class="red-background">Test5</h5>
+   <h6 id="heading-6" class="red-background">2<sup>2</sup> and H<sub>2</sub>O</h6>
+
+
+   <pre>
+      <code>
+def busca_binaria(lista, alvo):
+   esquerda, direita = 0, len(lista) - 1
+
+   while esquerda <= direita:
+      meio = (esquerda + direita) // 2
+      if lista[meio] == alvo:
+         return meio
+      elif lista[meio] < alvo:
+         esquerda = meio + 1
+      else:
+         direita = meio - 1
+
+   return -1
+
+numeros = [0, 3, 6, 7, 23, 48, 67]
+
+print(busca_binaria(numeros, 2))
+print(busca_binaria(numeros, 6))
+      </code>
+   </pre>
 
    <p>a <b class="bold">single phrase</b></p>
 
@@ -50,9 +78,8 @@
 
 </html>
 
-<!--HTML is NOT a case sensitive-->
-<!--the id needs to be single, whoever the class doesn't.-->
-<!--id is more important than class-->
-<!--b and i are bold and italic-->
+<!--HTML não é case sensitive-->
+<!--id é mais importante do que a classe-->
+<!--b e i são negrito e itálico-->
 <!--strong element represents strong importance, seriousness, or urgency for its contents -->
 <!--em element represents stress emphasis of its contents-->

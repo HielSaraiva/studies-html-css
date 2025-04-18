@@ -1,5 +1,5 @@
-# HTML & CSS Studies
+# Estudos HTML & CSS
 
-## Topics
+## Tópicos
 
 * HTML e CSS

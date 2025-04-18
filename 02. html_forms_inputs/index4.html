@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaaS de Gestão de Ares-Condicionados</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #007BFF;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar .user-actions button {
+      background-color: white;
+      color: #007BFF;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .navbar .user-actions button:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content h1 {
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-links">
+      <a href="#pavilhoes">Pavilhões</a>
+      <a href="#salas">Salas</a>
+      <a href="#ares">Ares</a>
+      <a href="#horarios">Horários</a>
+    </div>
+    <div class="user-actions">
+      <span>Bem-vindo, Usuário</span>
+      <button onclick="alterarSenha()">Alterar Senha</button>
+      <button onclick="sair()">Sair</button>
+    </div>
+  </header>
+  <main class="content">
+    <h1>Bem-vindo ao SaaS de Gestão de Ares-Condicionados</h1>
+    <p>Gerencie seus ares-condicionados de forma eficiente e prática.</p>
+  </main>
+
+  <script>
+    function alterarSenha() {
+      alert('Redirecionando para a página de alteração de senha...');
+      // Aqui você pode redirecionar para a página de alteração de senha
+    }
+
+    function sair() {
+      alert('Você será deslogado.');
+      // Aqui você pode implementar a lógica de logout
+    }
+  </script>
+</body>
+</html>
