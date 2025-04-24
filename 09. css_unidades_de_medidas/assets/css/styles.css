@@ -1,0 +1,40 @@
+/* Medidas absolutas e relativas */
+
+/* Unidade absoluta: px */
+/* Unidades relativas: 
+em(multiplicação wm em relação ao elemento pai mais próximo), 
+rem(mesma coisa, mas em relação ao elemento root, html),
+%(em relação ao elemento pai),
+vw,
+vh,
+vmin(menor tamanho da viewport,
+vmax(maior tamanho da viewport)
+ */
+
+html {
+   font-size: 62.5%;
+   scroll-behavior: smooth;
+}
+
+* {
+   margin:0;
+   padding: 0;
+}
+
+.pai {
+   width: 100vw;
+   height: 100vh;
+   background: yellow
+}
+
+p {
+   font-size: 1.6rem;
+}
+
+.color-one {
+   background-color: turquoise;
+}
+
+.color-two {
+   background-color: violet;
+}
