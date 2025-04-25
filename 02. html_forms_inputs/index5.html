@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      min-width: 320px; /* Define o mínimo de largura para o site */
+      overflow-x: hidden;
+    }
+
+    /* Barra lateral */
+    .sidebar {
+      width: 200px;
+      background-color: #007BFF;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px; /* Espaço para a altura da barra superior */
+      position: fixed;
+      height: 100%;
+      z-index: 1000;
+    }
+
+    .sidebar button {
+      background-color: #007BFF; /* Mesma cor do menu */
+      color: white; /* Texto branco */
+      border: none; /* Remove o contorno completo */
+      border-bottom: 1px solid white; /* Linha separando os botões */
+      padding: 10px 0;
+      width: 100%; /* Ocupa toda a largura da barra lateral */
+      text-align: center;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .sidebar button:last-child {
+      border-bottom: none; /* Remove a linha do último botão */
+    }
+
+    .sidebar button:hover {
+      background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+    }
+
+    /* Barra superior */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #007BFF; /* Mesma cor da barra lateral */
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1001;
+      height: 50px; /* Altura consistente */
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .header .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header .user-info span {
+      font-size: 16px;
+    }
+
+    .header .user-info button {
+      background-color: white;
+      color: #007BFF;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .header .user-info button:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    /* Botão sanduíche */
+    .hamburger {
+      background-color: white;
+      color: #007BFF;
+      border: none;
+      padding: 10px 30px; /* Ajuste para maior largura */
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1002;
+      display: none; /* Esconde o botão sanduíche por padrão */
+    }
+
+    /* Menu lateral responsivo */
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo cinza translúcido */
+      display: none;
+      z-index: 1000;
+    }
+
+    .menu-overlay.active {
+      display: block;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #007BFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1001;
+    }
+
+    .menu.active {
+      transform: translateX(0);
+    }
+
+    .menu button {
+      background-color: #007BFF; /* Mesma cor do menu */
+      color: white; /* Texto branco */
+      border: none; /* Remove o contorno completo */
+      border-bottom: 1px solid white; /* Linha separando os botões */
+      padding: 10px 0;
+      width: 100%; /* Ocupa toda a largura da barra lateral */
+      text-align: center;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .menu button:last-child {
+      border-bottom: none; /* Remove a linha do último botão */
+    }
+
+    .menu button:hover {
+      background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+    }
+
+    /* Conteúdo principal */
+    .content {
+      margin-left: 200px;
+      margin-top: 50px; /* Espaço para a altura da barra superior */
+      padding: 20px;
+      flex: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none; /* Esconde a barra lateral */
+      }
+
+      .hamburger {
+        display: block; /* Mostra o botão sanduíche */
+        position: absolute;
+        top: 5px; /* Centraliza verticalmente */
+        left: 10px;
+      }
+
+      .header .user-info {
+        margin-left: auto; /* Alinha a mensagem e o botão de sair à direita */
+      }
+
+      .header img {
+        display: none; /* Remove a imagem no canto superior esquerdo */
+      }
+
+      .content {
+        margin-left: 0; /* Remove o espaço da barra lateral */
+      }
+    }
+
+    @media (min-width: 769px) {
+      .menu {
+        display: none; /* Esconde o menu lateral responsivo */
+      }
+
+      .menu-overlay {
+        display: none; /* Remove o overlay */
+      }
+
+      .hamburger {
+        display: none; /* Esconde o botão sanduíche */
+      }
+
+      .header img {
+        display: block; /* Mostra a imagem no canto superior esquerdo */
+      }
+
+      .header .user-info {
+        margin-left: auto; /* Alinha a mensagem e o botão de sair à direita */
+      }
+
+      .sidebar {
+        display: flex; /* Mostra a barra lateral fixamente */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu lateral responsivo -->
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+  <div class="menu">
+    <button>Botão 1</button>
+    <button>Botão 2</button>
+    <button>Botão 3</button>
+    <button>Botão 4</button>
+    <button>Botão 5</button>
+  </div>
+
+  <!-- Barra superior -->
+  <div class="header">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <img src="https://cdn-icons-png.flaticon.com/512/1530/1530481.png" alt="Logo do site">
+    <div class="user-info">
+      <span>Bem-vindo, <strong>Usuário</strong></span>
+      <button onclick="sair()">Sair</button>
+    </div>
+  </div>
+
+  <!-- Barra lateral fixa -->
+  <div class="sidebar">
+    <button>Botão 1</button>
+    <button>Botão 2</button>
+    <button>Botão 3</button>
+    <button>Botão 4</button>
+    <button>Botão 5</button>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="content">
+    <h2>Bem-vindo à Landing Page</h2>
+    <p>Este é o conteúdo principal da página.</p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      const overlay = document.querySelector('.menu-overlay');
+      menu.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    function sair() {
+      alert('Você será deslogado.');
+      // Aqui você pode implementar a lógica de logout
+    }
+  </script>
+</body>
+</html>
